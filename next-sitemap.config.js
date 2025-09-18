@@ -33,9 +33,6 @@ module.exports = {
         allow: '/',
       },
     ],
-    additionalSitemaps: [
-      `${process.env.SITE_URL || 'https://www.tattooidea.tattoo'}/sitemap.xml`,
-    ],
     host: process.env.SITE_URL || 'https://www.tattooidea.tattoo',
     crawlDelay: 1,
   },
@@ -43,7 +40,28 @@ module.exports = {
   changefreq: 'daily',
   priority: 0.8,
   sitemapSize: 7000,
-  generateIndexSitemap: true,
+  generateIndexSitemap: false,
+  // 添加博客文章URLs
+  additionalPaths: async (config) => {
+    const blogSlugs = [
+      'phoenix-tattoo-ideas',
+      'creative-hand-tattoos',
+      'tattoo-ideas-for-women', 
+      'tattoo-ideas-for-men',
+      'ai-tattoo-generator-revolution',
+      'finding-perfect-tattoo-style',
+      'legionnaires-lyme-disease-tattoo-safety',
+      'ambigram-tattoo-generator-guide',
+      'ai-photo-editor-guide'
+    ];
+    
+    return blogSlugs.map(slug => ({
+      loc: `/blog/${slug}`,
+      changefreq: 'weekly',
+      priority: 0.9,
+      lastmod: new Date().toISOString(),
+    }));
+  },
   // 针对不同页面设置不同优先级
   transform: async (config, path) => {
     // 高优先级页面

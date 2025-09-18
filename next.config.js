@@ -17,7 +17,18 @@ const nextConfig = {
     // 在生产构建中忽略TypeScript错误
     ignoreBuildErrors: true,
   },
-  // 配置webpack以处理SVG文件
+  // 配置Turbopack
+  experimental: {
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
+  // 配置webpack以处理SVG文件（Webpack模式）
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

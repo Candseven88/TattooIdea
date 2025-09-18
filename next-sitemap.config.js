@@ -39,7 +39,7 @@ module.exports = {
     host: process.env.SITE_URL || 'https://www.tattooidea.tattoo',
     crawlDelay: 1,
   },
-  exclude: ['/protected/*', '/api/*', '/auth/forgot-password', '/auth/login', '/auth/register'],
+  exclude: ['/protected/*', '/api/*', '/auth/*'],
   changefreq: 'daily',
   priority: 0.8,
   sitemapSize: 7000,

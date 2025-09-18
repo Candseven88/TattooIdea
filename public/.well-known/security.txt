@@ -1,0 +1,7 @@
+Contact: mailto:security@tattooidea.tattoo
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://www.tattooidea.tattoo/pgp-key.txt
+Preferred-Languages: en
+Canonical: https://www.tattooidea.tattoo/.well-known/security.txt
+Policy: https://www.tattooidea.tattoo/security-policy
+Hiring: https://www.tattooidea.tattoo/careers 

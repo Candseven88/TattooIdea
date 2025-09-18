@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <style>
+    .text { font-family: 'Times New Roman', serif; font-size: 65px; font-weight: bold; }
+    .decorative { fill: none; stroke: #000; stroke-width: 2.5; }
+    .ornament { fill: none; stroke: #000; stroke-width: 1.5; }
+  </style>
+  <rect width="100%" height="100%" fill="white"/>
+  <g transform="translate(250, 250)">
+    <path class="decorative" d="M-200,-100 C-180,-50 -150,-30 -100,-20 C-50,-10 -20,-10 0,0 C20,-10 50,-10 100,-20 C150,-30 180,-50 200,-100" />
+    <path class="decorative" d="M-200,100 C-180,50 -150,30 -100,20 C-50,10 -20,10 0,0 C20,10 50,10 100,20 C150,30 180,50 200,100" />
+    <path class="ornament" d="M-180,-80 C-160,-40 -130,-20 -80,-10 C-40,-5 -10,-5 0,0 C10,-5 40,-5 80,-10 C130,-20 160,-40 180,-80" />
+    <path class="ornament" d="M-180,80 C-160,40 -130,20 -80,10 C-40,5 -10,5 0,0 C10,5 40,5 80,10 C130,20 160,40 180,80" />
+    <text x="-70" y="-40" class="text" text-anchor="middle">J</text>
+    <text x="0" y="-40" class="text" text-anchor="middle">a</text>
+    <text x="70" y="-40" class="text" text-anchor="middle">c</text>
+    <text x="120" y="-40" class="text" text-anchor="middle">k</text>
+    <text x="-100" y="60" class="text" text-anchor="middle">R</text>
+    <text x="-30" y="60" class="text" text-anchor="middle">o</text>
+    <text x="30" y="60" class="text" text-anchor="middle">s</text>
+    <text x="80" y="60" class="text" text-anchor="middle">e</text>
+  </g>
+</svg> 

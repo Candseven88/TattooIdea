@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Test</title>
+</head>
+<body>
+    <h1>Share Function Test</h1>
+    <button onclick="testShare()">Test Share</button>
+    <button onclick="testClipboard()">Test Clipboard</button>
+    <div id="result"></div>
+
+    <script>
+        async function testShare() {
+            const text = `🎨 Just voted on some amazing tattoo designs on Teaspill! Check out the leaderboard and vote for your favorites! #Teaspill #TattooDesigns #VoteForArt`;
+            const url = window.location.href;
+            
+            try {
+                // 检查是否支持原生分享API（主要在移动设备上）
+                if (navigator.share && navigator.canShare) {
+                    const shareData = {
+                        title: 'Teaspill Tattoo Voting',
+                        text: text,
+                        url: url
+                    };
+                    
+                    // 检查是否可以分享这些数据
+                    if (navigator.canShare(shareData)) {
+                        await navigator.share(shareData);
+                        document.getElementById('result').innerHTML = '✅ Native share successful!';
+                        return;
+                    }
+                }
+                
+                // 如果不支持原生分享，尝试复制到剪贴板
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(`${text}\n\n${url}`);
+                    document.getElementById('result').innerHTML = '✅ Share text copied to clipboard!';
+                } else {
+                    // 降级方案：使用传统的复制方法
+                    const textArea = document.createElement('textarea');
+                    textArea.value = `${text}\n\n${url}`;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    document.getElementById('result').innerHTML = '✅ Share text copied to clipboard!';
+                }
+            } catch (error) {
+                console.error('Share failed:', error);
+                document.getElementById('result').innerHTML = `❌ Share failed: ${error.message}`;
+            }
+        }
+
+        async function testClipboard() {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText('Test clipboard functionality');
+                    document.getElementById('result').innerHTML = '✅ Clipboard test successful!';
+                } else {
+                    document.getElementById('result').innerHTML = '❌ Clipboard not supported or not secure context';
+                }
+            } catch (error) {
+                document.getElementById('result').innerHTML = `❌ Clipboard test failed: ${error.message}`;
+            }
+        }
+
+        // 显示环境信息
+        document.getElementById('result').innerHTML = `
+            <h3>Environment Info:</h3>
+            <p>User Agent: ${navigator.userAgent}</p>
+            <p>Secure Context: ${window.isSecureContext}</p>
+            <p>Share API: ${navigator.share ? 'Supported' : 'Not supported'}</p>
+            <p>Clipboard API: ${navigator.clipboard ? 'Supported' : 'Not supported'}</p>
+            <p>Can Share: ${navigator.canShare ? 'Supported' : 'Not supported'}</p>
+        `;
+    </script>
+</body>
+</html> 

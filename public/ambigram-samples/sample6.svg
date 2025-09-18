@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <style>
+    .text { font-family: 'Arial', sans-serif; font-size: 90px; font-weight: bold; }
+    .background { fill: #f0f0f0; }
+  </style>
+  <rect width="100%" height="100%" fill="white"/>
+  <g transform="translate(250, 250)">
+    <rect x="-220" y="-120" width="440" height="240" rx="20" class="background" />
+    <text x="0" y="0" class="text" text-anchor="middle" dominant-baseline="middle">Jack</text>
+    <text x="0" y="80" class="text" text-anchor="middle">Rose</text>
+    <line x1="-180" y1="40" x2="180" y2="40" stroke="#000" stroke-width="2" />
+  </g>
+</svg> 

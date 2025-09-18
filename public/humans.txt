@@ -1,0 +1,25 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    Developer: AI Tattoo Design Team
+    Site: https://www.tattooidea.tattoo
+    Email: contact@tattooidea.tattoo
+    Location: Global
+
+# TECHNOLOGY COLOPHON
+    HTML5, CSS3, JavaScript
+    Next.js, React, TypeScript
+    Tailwind CSS
+    AI Integration: OpenAI GPT-4, Stability AI
+    Analytics: Google Analytics, Microsoft Clarity
+    Hosting: Vercel
+
+# SITE
+    Last update: 2025/01/15
+    Language: English
+    Doctype: HTML5
+    IDE: Visual Studio Code
+    Standards: HTML5, CSS3, ES6+
+    Components: React Components
+    Software: Next.js Framework 

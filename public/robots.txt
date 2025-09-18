@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.tattooidea.tattoo
+
+# Sitemaps
+Sitemap: https://www.tattooidea.tattoo/sitemap.xml

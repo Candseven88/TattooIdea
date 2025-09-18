@@ -25,7 +25,7 @@ TattooIdea是一个AI驱动的纹身设计生成器，帮助用户根据文本�
 
 1. 克隆仓库：
    ```
-   git clone https://github.com/Candseven88/TattooIdea.git
+   git clone https://github.com/yourusername/TattooIdea.git
    cd TattooIdea
    ```
 
@@ -103,4 +103,4 @@ TattooIdea/
 
 ## 许可
 
-MIT License
+[MIT License](LICENSE)
